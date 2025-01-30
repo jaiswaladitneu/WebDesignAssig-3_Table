@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<title>Display Name and NUID</title>
+  	<style>
+    #info {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 20px;
+    	}
+  	</style>
+	<title>Table CheckList</title>
+	<link rel="stylesheet" type="text/css" href="table.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+</head>
+<body>
+	<!-- Modal Popup -->
+<div id="editModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; border: 1px solid #ccc; padding: 20px; z-index: 1000;">
+	<h3 id="modalTitle"></h3>
+	<div id="modalContent"></div>
+	<br />
+	<button id="updateButton">Update</button>
+	<button id="cancelButton">Cancel</button>
+  </div>
+  
+  <!-- Overlay for Modal -->
+  <div id="modalOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999;"></div>
+
+  
+	<div id="info"></div>
+	<table id="myTable">
+		<tr>
+			<th><Select></Select></th>
+			<th>STUDENT</th>
+			<th>ADVISOR</th>
+			<th>AWARD<br/>STATUS</th>
+			<th>SEMESTER</th>
+			<th>TYPE</th>
+			<th>BUDGET<br />#</th>
+			<th>PERCENTAGE</th>
+			<th>DELETE</th>
+			<th>EDIT</th>
+		</tr>
+		<tr>
+			<td><input type="checkbox" /><br /><br /><img onClick="toggleRowDetails(this)" src="down.png" width="25px" /></td>
+			<td>Student 1</td>
+			<td>Teacher 1</td>
+			<td>Approved</td>
+			<td>Fall</td>
+			<td>TA</td>
+			<td>12345</td>
+			<td>100%</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr class="dropDownTextArea" style="display: none;">
+			<td colspan="10">
+			  Advisor:<br /><br />
+			  Award Details<br />
+			  Summer 1-2014(TA)<br />
+			  Budget Number:<br />
+			  Tuition Number:<br />
+			  Comments:<br /><br /><br />
+			  Award Status:<br /><br /><br />
+			</td></tr>
+		<tr>
+			<td><input type="checkbox" /><br /><br /><img onClick="toggleRowDetails(this)" src="down.png" width="25px" /></td>
+			<td>Student 2</td>
+			<td>Teacher 2</td>
+			<td>Approved</td>
+			<td>Fall</td>
+			<td>TA</td>
+			<td>23456</td>
+			<td>100%</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr class="dropDownTextArea" style="display: none;">
+			<td colspan="10">
+			  Advisor:<br /><br />
+			  Award Details<br />
+			  Summer 1-2014(TA)<br />
+			  Budget Number:<br />
+			  Tuition Number:<br />
+			  Comments:<br /><br /><br />
+			  Award Status:<br /><br /><br />
+			</td>
+		  </tr>
+		<tr>
+			<td><input type="checkbox" /><br /><br /><img onClick="toggleRowDetails(this)" src="down.png" width="25px" /></td>
+			<td>Student 3</td>
+			<td>Teacher 3</td>
+			<td>Approved</td>
+			<td>Fall</td>
+			<td>TA</td>
+			<td>34567</td>
+			<td>100%</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr class="dropDownTextArea" style="display: none;">
+			<td colspan="10">
+			  Advisor:<br /><br />
+			  Award Details<br />
+			  Summer 1-2014(TA)<br />
+			  Budget Number:<br />
+			  Tuition Number:<br />
+			  Comments:<br /><br /><br />
+			  Award Status:<br /><br /><br />
+			</td>
+		</tr>
+	</table>
+
+	<br /><br />
+	
+	<button id="button" disabled>SUBMIT SELECTED AWARDS</button>
+	<button id="add" onClick="addNewRow()">Add New Student</button>
+
+	<nav class="socialmediaicons"></nav>
+	<script src="script.js"></script>
+	
+</body> 
+</html>
